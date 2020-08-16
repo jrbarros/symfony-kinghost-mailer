@@ -9,3 +9,5 @@ MAILER_DSN=kinghost+smtp://user:pass@default
 ###< symfony/mailer ###
 
 ```
+
+Ainda em desenvolvimento!
