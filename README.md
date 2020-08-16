@@ -10,13 +10,13 @@ MAILER_DSN=kinghost+smtp://user:pass@default
 
 ```
 
-Como instalar:
+### Como instalar:
 
 ```
 composer require jrbarros/symfony-kinghost-mailer
 ```
 
-Como configurar:
+### Como configurar:
 
 ##### Em config/services.yaml
 ```
