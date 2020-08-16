@@ -1,0 +1,24 @@
+{
+    "name": "joalissonbarros/symfony-kinghost-mailer",
+    "description": "Symfony KingHost Mailer Bridge",
+    "require": {
+        "symfony/mailer": "^4.4|^5.0"
+    },
+    "require-dev": {
+        "symfony/http-client": "^4.4|^5.0",
+        "symfony/phpunit-bridge": "^5.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jrbarros",
+            "email": "joalisson@mobilesales.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "JrBarros\\Mailer\\Bridge\\KingHost\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
