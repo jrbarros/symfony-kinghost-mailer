@@ -1,5 +1,5 @@
 {
-    "name": "joalissonbarros/symfony-kinghost-mailer",
+    "name": "jrbarros/symfony-kinghost-mailer",
     "description": "Symfony KingHost Mailer Bridge",
     "require": {
         "symfony/mailer": "^4.4|^5.0"
