@@ -15,15 +15,21 @@ use Symfony\Component\Mailer\Transport\TransportInterface;
 class KingHostTransportFactory extends AbstractTransportFactory
 {
 
+
     protected function getSupportedSchemes(): array
     {
-        return ['kinghost+smtp'];
+        return [KingHostSmtpTransport::KING_HOST_BRAZIL, KingHostSmtpTransport::KING_HOST_INTERNATIONAL];
     }
 
     public function create(Dsn $dsn): TransportInterface
     {
         if (\in_array($dsn->getScheme(), $this->getSupportedSchemes())) {
-            return new KingHostSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger);
+
+            if ($dsn->getScheme() === KingHostSmtpTransport::KING_HOST_BRAZIL) {
+                return new KingHostSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger);
+            }
+
+            return new KingHostSmtpTransport($this->getUser($dsn), $this->getPassword($dsn), $this->dispatcher, $this->logger, KingHostSmtpTransport::KING_HOST_SMTP_INTERNATIONAL);
         }
 
         throw new UnsupportedSchemeException($dsn, 'kinghost', $this->getSupportedSchemes());
